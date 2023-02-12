@@ -1,0 +1,10 @@
+Biết cách xây dựng giao diện web với HTML, CSS
+Biết cách phân tích giao diện website
+Biết cách đặt tên class CSS theo chuẩn BEM
+Biết cách làm giao diện web responsive
+Làm chủ Flexbox khi dựng bố cục website
+Sở hữu 2 giao diện web khi học xong khóa học
+Biết cách tự tạo động lực cho bản thân
+Biết cách tự học những kiến thức mới
+Học được cách làm UI chỉn chu, kỹ tính
+Nhận chứng chỉ khóa học do F8 cấp

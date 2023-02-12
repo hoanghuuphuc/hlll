@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" th:replace="~{/site/index :: dynamic(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang Chủ</title>
+</head>
+<body>
+
+<!--<div class="banner">-->
+<!--    <img src="/image/logene.jpg" alt="" />-->
+<!--</div>-->
+    <div th:fragment="main">
+        <div class="banner">
+            <img src="image/banner.jfif" alt="" />
+        </div>
+        <div class="content">
+            <div class="content-1"></div>
+            <div class="content-2">Front-End</div>
+            <div class="content-3"></div>
+        </div>
+    <div class="boxs" >
+
+    <div class="box"th:each="course : ${courses}" >
+
+    <div class="box-image">
+        <a th:href="@{/khoa-hoc/{id}(id=${course.encodedId})}"><img src="image/Html5-Css3.png" alt="" /></a>
+    </div>
+
+    <div class="box-content" >
+        <div class="box-name">
+            <span th:text="${course.tps_Name}"></span>
+        </div>
+        <div class="box-price">
+            <div class="price">
+                <ion-icon name="pricetag"></ion-icon>
+                <span>Giá Gốc: <a  th:text="${course.tps_discount}"></a> VNĐ</span>
+            </div>
+            <div class="sale">
+                <ion-icon name="bookmark"></ion-icon>
+                <span>Giá Sell: <a th:text="${course.tps_Price}"></a> VNĐ</span>
+            </div>
+        </div>
+    </div>
+<!--    <div class="box-btn">-->
+<!--        <button>Mua Ngay</button>-->
+<!--&lt;!&ndash;        <ion-icon name="cart-outline"></ion-icon>&ndash;&gt;-->
+<!--    </div>-->
+</div>
+</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/rps_mobile.css" />
+</head>
+<body>
+<div class="view-video">
+    <header class="header-view-video">
+        <div class="header-left">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+            <img src="/Img/logene1.jpg" alt="" />
+            <span> HTML CSS từ Zero đến Hero</span>
+        </div>
+        <div class="header-right">
+            <span><strong>1/166 </strong>bài học</span>
+            <span><ion-icon name="document-outline"></ion-icon>Ghi chú </span>
+            <span
+            ><ion-icon name="search-circle-outline"></ion-icon>Hướng dẫn</span
+            >
+        </div>
+    </header>
+    <div class="content-view-videos">
+        <div class="content-view-video">
+            <div class="content-view-left">
+                <div class="content-view-vd">
+                    <iframe
+                            width="982"
+                            height="552"
+                            th:src="'https://www.youtube.com/embed/' + ${linkytbList}"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="content-view-content-1">
+                    <div class="content-view-content-left">
+                        <h1>Responsive là gì?</h1>
+                        <p>Cập nhật tháng 11 năm 2022</p>
+                    </div>
+<!--                    <div class="content-view-content-right">-->
+<!--                        <ion-icon name="add-outline"></ion-icon>-->
+<!--                        <span>Thêm ghi chú tại: <strong>00:02</strong></span>-->
+<!--                    </div>-->
+                </div>
+                <div class="content-view-content-2">
+                    <p>
+                        Tham gia các cộng đồng để cùng học hỏi, chia sẻ và “thám thính”
+                        xem F8 sắp có gì mới nhé!
+                    </p>
+                    <ul>
+                        <li>Fanpage: <a href=""></a></li>
+                        <li>Group: <a href=""></a></li>
+                        <li>Youtube: <a href=""></a></li>
+                        <li>Sơn Đặng: <a href=""></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-view-right">
+                <h3 style="padding: 15px 15px 5px 15px">Nội dung khóa học</h3>
+                <div class="accordion">
+                    <div class="contentBx" th:if="${ListMycourse.chapters}">
+                        <div th:each="chapter : ${ListMycourse.chapters}">
+                            <div class="accordion-label">
+                                <ion-icon name="bookmarks"></ion-icon>
+                                <strong > </strong>
+                               <span th:text="${chapter.tps_title}"></span>
+                            </div>
+                            <div class="accordion-content">
+                                <h3 style="padding: 15px 10px 5px 10px"> Tổng số bài học là <strong th:text="${chapter.contents.size()}"></strong></h3>
+                                <table>
+                                    <tr th:each="content : ${chapter.contents}">
+                                        <td>
+                                            <ion-icon name="play-circle"></ion-icon>
+                                            <span><strong> </strong>[[${content.tps_title}]]</span>
+                                        </td>
+<!--                                        <td>03:15</td>-->
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-view-videos-bot">
+        <div class="view-videos-bot-learn">
+            <div class="view-videos-bot-learn-left">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+                <span>Bài trước</span>
+            </div>
+            <div class="view-videos-bot-learn-right">
+                <span>Bài tiếp theo</span>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+        </div>
+        <div class="view-videos-bot-continue-learn">
+            <span><strong>1.</strong>Bắt đầu</span>
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+        </div>
+    </div>
+</div>
+<script>
+    const accordion = document.getElementsByClassName("contentBx");
+    for (i = 0; i < accordion.length; i++) {
+        accordion[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+        });
+    }
+</script>
+<script
+        type="module"
+        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script
+        nomodule
+        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

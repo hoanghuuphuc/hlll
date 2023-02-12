@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" th:replace="~{/site/index :: dynamic(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="details-section" th:fragment="main">
+    <div class="boxs" >
+
+        <div class="box" th:each="p:${mycrouse}" >
+
+            <div class="box-image">
+                <a  th:href="@{|/learning/${p.courseor.tps_id}|}">
+                    <img src="image/Html5-Css3.png" alt="" /></a>
+            </div>
+
+            <div class="box-content" >
+                <div class="box-name">
+                    <span th:text="${p.courseor.tps_Name}"></span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
